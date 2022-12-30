@@ -14,22 +14,25 @@
 
       <mat-card-title>
         <img alt="logo" height="40px" src="../../../assets/media/logo.svg" width="40px"/>
-        <h3>Sign in</h3>
+        <h2>Sign in</h2>
       </mat-card-title>
 
       <form (ngSubmit)="signInButtonClicked($event)" [formGroup]="formGroup">
 
-        <mat-form-field appearance="outline" [ngClass]="(getEmail()?.invalid && formGroup.touched) ? 'error-text' : ''">
-          <mat-label >E-mail address</mat-label>
+        <mat-form-field [ngClass]="(getEmail()?.invalid && formGroup.touched) ? 'error-text' : ''" appearance="outline">
+          <mat-label>E-mail address</mat-label>
           <input formControlName="email" matInput>
           <mat-hint *ngIf="getEmail()?.touched && getEmail()?.hasError('required')">Required</mat-hint>
-          <mat-hint *ngIf="getEmail()?.touched && getEmail()?.hasError('email')">Please enter valid e-mail address</mat-hint>
+          <mat-hint *ngIf="getEmail()?.touched && getEmail()?.hasError('email')">Please enter valid e-mail address
+          </mat-hint>
         </mat-form-field>
 
-        <mat-form-field appearance="outline" [ngClass]="(getPassword()?.invalid && formGroup.touched) ? 'error-text' : ''">
+        <mat-form-field [ngClass]="(getPassword()?.invalid && formGroup.touched) ? 'error-text' : ''"
+                        appearance="outline">
           <mat-label>Password</mat-label>
           <input formControlName="password" matInput>
-          <mat-hint class="error-text" *ngIf="getPassword()?.hasError('required') && getPassword()?.touched">Required</mat-hint>
+          <mat-hint *ngIf="getPassword()?.hasError('required') && getPassword()?.touched" class="error-text">Required
+          </mat-hint>
         </mat-form-field>
 
         <span class="forgot-password">
@@ -40,7 +43,7 @@
           Sign in
         </button>
 
-        <button mat-button class="sign-up-button">
+        <button class="sign-up-button" mat-button>
           Don't have an account? Sign Up!
         </button>
 

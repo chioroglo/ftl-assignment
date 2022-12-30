@@ -1,4 +1,4 @@
-import {Component, OnInit} from '@angular/core';
+import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
@@ -16,7 +16,7 @@ export class LoginPageComponent {
   constructor(
     private _router: Router,
     private _userService: UserService,
-    private _formBuilder: FormBuilder) {
+    private _formBuilder: FormBuilder,) {
 
     this.formGroup = this._formBuilder.group({
       email: new FormControl("", [Validators.required, Validators.email]),
@@ -37,9 +37,11 @@ export class LoginPageComponent {
 
     e.preventDefault();
 
-
     this._userService.authenticate(this.formGroup.value).subscribe({
-      next: (response) => console.log("AUTHENTICATED SUCCESSFULLY"),
+      next: (response) => {
+        console.log("authorized");
+        //this._router.navigate("profile-page");
+      },
       error: (error) => console.log(error)
     });
 
