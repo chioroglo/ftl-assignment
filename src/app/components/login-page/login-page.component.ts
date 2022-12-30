@@ -2,6 +2,8 @@ import {Component} from '@angular/core';
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
+import { Store } from '@ngrx/store';
+import {authorize} from "../../reducers/user/userStateActions";
 
 @Component({
   selector: 'app-login-page',
@@ -16,7 +18,8 @@ export class LoginPageComponent {
   constructor(
     private _router: Router,
     private _userService: UserService,
-    private _formBuilder: FormBuilder,) {
+    private _formBuilder: FormBuilder,
+    private _store : Store) {
 
     this.formGroup = this._formBuilder.group({
       email: new FormControl("", [Validators.required, Validators.email]),
@@ -39,8 +42,10 @@ export class LoginPageComponent {
 
     this._userService.authenticate(this.formGroup.value).subscribe({
       next: (response) => {
+        console.log(response);
+        this._store.dispatch(authorize(response));
         console.log("authorized");
-        //this._router.navigate("profile-page");
+        this._router.navigate(['profile']);
       },
       error: (error) => console.log(error)
     });

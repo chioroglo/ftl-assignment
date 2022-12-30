@@ -3,6 +3,7 @@ import {LoginDto, UserModel} from "../models/user";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../environments/environment";
 import {Observable} from "rxjs";
+import {UserState} from "../reducers/user/types/UserState";
 
 @Injectable({
   providedIn: 'root'
@@ -20,8 +21,9 @@ export class UserService {
   }
 
   authenticate(credentials: LoginDto): Observable<UserModel> {
-    //localStorage.setItem("token",jwt);
-    return this._httpClient.get<UserModel>(this.baseUrl);
-    //return true;
+
+    return new Observable<UserModel>((subscriber) => {
+      subscriber.next(credentials as UserModel);
+    });
   }
 }
