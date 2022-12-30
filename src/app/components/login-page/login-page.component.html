@@ -1,7 +1,6 @@
 <div class="login-page-container">
 
-  <div class="image-container">
-  </div>
+  <div class="image-container"></div>
 
   <div class="login-form-box">
 
@@ -15,22 +14,35 @@
 
       <mat-card-title>
         <img alt="logo" height="40px" src="../../../assets/media/logo.svg" width="40px"/>
-        <h2>Sign in</h2>
+        <h3>Sign in</h3>
       </mat-card-title>
 
-      <form (ngSubmit)="signInButtonClicked()" [formGroup]="formGroup">
+      <form (ngSubmit)="signInButtonClicked($event)" [formGroup]="formGroup">
 
-        <mat-form-field>
-          <mat-label>E-mail address</mat-label>
-          <input formControlName="email" matInput type="text">
+        <mat-form-field appearance="outline" [ngClass]="(getEmail()?.invalid && formGroup.touched) ? 'error-text' : ''">
+          <mat-label >E-mail address</mat-label>
+          <input formControlName="email" matInput>
+          <mat-hint *ngIf="getEmail()?.touched && getEmail()?.hasError('required')">Required</mat-hint>
+          <mat-hint *ngIf="getEmail()?.touched && getEmail()?.hasError('email')">Please enter valid e-mail address</mat-hint>
         </mat-form-field>
 
-        <mat-form-field>
+        <mat-form-field appearance="outline" [ngClass]="(getPassword()?.invalid && formGroup.touched) ? 'error-text' : ''">
           <mat-label>Password</mat-label>
-          <input formControlName="password" matInput type="password">
+          <input formControlName="password" matInput>
+          <mat-hint class="error-text" *ngIf="getPassword()?.hasError('required') && getPassword()?.touched">Required</mat-hint>
         </mat-form-field>
 
-        <button mat-flat-button>Sign in</button>
+        <span class="forgot-password">
+            Forgot password?
+        </span>
+
+        <button [disabled]="formGroup.invalid" class="submit-button" mat-flat-button>
+          Sign in
+        </button>
+
+        <button mat-button class="sign-up-button">
+          Don't have an account? Sign Up!
+        </button>
 
       </form>
     </div>

@@ -4,7 +4,6 @@
   justify-content: center;
 }
 
-
 .buttons-above-header {
   display: flex;
   justify-content: flex-end;
@@ -33,25 +32,34 @@
   }
 }
 
-mat-form-field {
-  width: 500px;
-}
 
 .form-container {
 
 }
 
 
-.error {
-  padding: 16px;
-  width: 300px;
-  color: #BB0000;
-  background-color: #808080;
+form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 70%;
+  margin: 10px auto;
+  padding: 50px;
+  height: 400px;
 }
 
-mat-card {
-  padding: 20px;
+input {
+  padding: 10px 0;
 }
+
+mat-form-field {
+  width: 100%;
+}
+
+.error-text {
+  color: #FF0000;
+}
+
 
 mat-card-title, mat-card-content {
   display: flex;
@@ -61,8 +69,11 @@ mat-card-title, mat-card-content {
 }
 
 .forgot-password {
-  display: flex;
-  justify-content: flex-end;
+  cursor: pointer;
+  text-align: right;
+  color: rgb(41, 98, 255);
+  font-size: 0.875rem;
+
 }
 
 .login-form-box {
@@ -73,6 +84,29 @@ mat-card-title, mat-card-content {
 }
 
 .submit-button {
+  font-size: 0.875rem;
+  border-radius: 16px;
+  padding:20px;
+  font-weight: 700;
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
+  width: 100%;
+  background-color: rgb(41, 98, 255) !important;
+  color: rgb(255,255,255) !important;
+}
+
+.sign-up-button {
+  transition: 0.1s !important;
+  font-size: 0.875rem;
+  color: rgb(41, 98, 255) !important;
+  border-radius: 16px;
+  padding:20px;
+  font-weight: 700;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+.sign-up-button:hover {
+  background-color: rgb(41,98,255,0.05) !important;
 }

@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from "@angular/router";
 import {UserService} from "../../services/user.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
@@ -12,10 +12,6 @@ export class LoginPageComponent {
 
 
   public formGroup: FormGroup;
-  // public formGroup = new FormGroup({
-  //   email: new FormControl("",[Validators.required,Validators.email]),
-  //   password: new FormControl("",[Validators.required])
-  // })
 
   constructor(
     private _router: Router,
@@ -28,7 +24,19 @@ export class LoginPageComponent {
     })
   }
 
-  async signInButtonClicked(): Promise<any> {
+  // form group getters
+  getEmail() {
+    return this.formGroup.get("email");
+  }
+
+  getPassword() {
+    return this.formGroup.get("password");
+  }
+
+  async signInButtonClicked(e: SubmitEvent): Promise<any> {
+
+    e.preventDefault();
+
 
     this._userService.authenticate(this.formGroup.value).subscribe({
       next: (response) => console.log("AUTHENTICATED SUCCESSFULLY"),
