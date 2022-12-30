@@ -13,6 +13,26 @@
 
     <div class="form-container">
 
+      <mat-card-title>
+        <img alt="logo" height="40px" src="../../../assets/media/logo.svg" width="40px"/>
+        <h2>Sign in</h2>
+      </mat-card-title>
+
+      <form (ngSubmit)="signInButtonClicked()" [formGroup]="formGroup">
+
+        <mat-form-field>
+          <mat-label>E-mail address</mat-label>
+          <input formControlName="email" matInput type="text">
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Password</mat-label>
+          <input formControlName="password" matInput type="password">
+        </mat-form-field>
+
+        <button mat-flat-button>Sign in</button>
+
+      </form>
     </div>
   </div>
 </div>

@@ -11,6 +11,10 @@ import {MatCardModule} from "@angular/material/card";
 import {MatInputModule} from "@angular/material/input";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {StoreModule} from '@ngrx/store';
+import {EffectsModule} from '@ngrx/effects';
+import {HttpClientModule} from "@angular/common/http";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 
 const muiModules = [
   MatCardModule,
@@ -30,8 +34,13 @@ const muiModules = [
   imports: [
     ...muiModules,
     BrowserModule,
+    HttpClientModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    StoreModule.forRoot({}, {}),
+    EffectsModule.forRoot([]),
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

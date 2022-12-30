@@ -34,12 +34,13 @@
 }
 
 mat-form-field {
-  width:500px;
+  width: 500px;
 }
 
 .form-container {
 
 }
+
 
 .error {
   padding: 16px;
