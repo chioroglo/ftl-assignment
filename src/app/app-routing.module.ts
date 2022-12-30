@@ -6,10 +6,10 @@ import {NgModule} from "@angular/core";
 
 
 const appRoutes: Routes = [
-  { path: "login", component: LoginPageComponent },
-  { path: "profile", component: ProfilePageComponent },
-  { path: "", redirectTo: "/login", pathMatch: "full"}, // TODO add route guard
-  { path: "**", component: RouteNotFoundPageComponent }
+  {path: "login", component: LoginPageComponent},
+  {path: "profile", component: ProfilePageComponent},
+  {path: "", redirectTo: "/login", pathMatch: "full"}, // TODO add route guard
+  {path: "**", component: RouteNotFoundPageComponent}
 ]
 
 @NgModule({
@@ -19,4 +19,5 @@ const appRoutes: Routes = [
   ],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

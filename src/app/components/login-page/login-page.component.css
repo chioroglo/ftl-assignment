@@ -1,0 +1,77 @@
+.login-page-container {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+}
+
+
+.buttons-above-header {
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 20px;
+}
+
+.image-container {
+  width: 58%;
+  height: inherit;
+  background-color: #F0F0F0;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: url('/assets/media/login-page-banner.svg');
+  background-position: center center;
+}
+
+@media only screen and (max-width: 1000px) {
+  .image-container {
+    width: 20%
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .image-container {
+    width: 0;
+  }
+}
+
+mat-form-field {
+  width:500px;
+}
+
+.form-container {
+
+}
+
+.error {
+  padding: 16px;
+  width: 300px;
+  color: #BB0000;
+  background-color: #808080;
+}
+
+mat-card {
+  padding: 20px;
+}
+
+mat-card-title, mat-card-content {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: column;
+  align-items: center;
+}
+
+.forgot-password {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.login-form-box {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.submit-button {
+  display: flex;
+  justify-content: flex-end;
+}
