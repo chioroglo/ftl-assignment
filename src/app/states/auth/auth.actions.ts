@@ -8,3 +8,5 @@ export const loginRequest = createAction(AuthActionTypes.LoginRequestOngoing, pr
 export const loginSuccess = createAction(AuthActionTypes.LoggedSuccessfully, props<LoginSuccessfullResponse>());
 
 export const loginFailure = createAction(AuthActionTypes.LoggedFailure, props<{ errorMessage: string }>());
+
+export const logout = createAction(AuthActionTypes.Logout);

@@ -1,6 +1,6 @@
 import {createReducer, on} from "@ngrx/store";
 import {authStateInitial} from "./authStateInitial";
-import {loginFailure, loginRequest, loginSuccess} from "./auth.actions";
+import {loginFailure, loginRequest, loginSuccess, logout} from "./auth.actions";
 
 export const authReducer = createReducer(authStateInitial,
   on(loginSuccess, (state, response) => {
@@ -11,5 +11,8 @@ export const authReducer = createReducer(authStateInitial,
   }),
   on(loginRequest, (state) => {
     return {...state, isLoginInProgress: true}
+  }),
+  on(logout,(state) => {
+    return {...state,isLoginInProgress: false,isLoggedIn: false,user: null,loginError: undefined} // undefined?? maybe use null instead
   })
 );

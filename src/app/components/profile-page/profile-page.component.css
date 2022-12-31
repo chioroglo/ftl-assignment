@@ -1,4 +1,15 @@
 .profile-page-container {
   background-color: rgb(236, 239, 241);
-  height: 100vh;
+  display:flex;
+  justify-content: center;
+}
+
+main {
+  flex-grow: 1;
+}
+
+.logout-button-container {
+  display:flex;
+  justify-content: flex-end;
+  padding: 40px;
 }

@@ -1,4 +1,15 @@
 <div class="profile-page-container">
   <app-sidebar></app-sidebar>
-  <main></main>
+  <main>
+
+    <div class="logout-button-container">
+      <button (click)="logoutButtonClick()" mat-mini-fab color="white">
+        <mat-icon>exit_to_app</mat-icon>
+      </button>
+    </div>
+
+
+    {{emailOfUser$ | async}}
+    USER PAGE
+  </main>
 </div>
