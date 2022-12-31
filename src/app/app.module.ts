@@ -16,10 +16,10 @@ import {EffectsModule} from '@ngrx/effects';
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
-import {metaReducers, reducers} from './reducers';
 import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {AppEffects} from './app.effects';
-import {AuthGuard} from "./guards/auth.guard";
+import {authReducer} from "./states/auth/auth.reducer";
+import {AuthEffects} from "./states/auth/auth.effects";
 
 const muiModules = [
   MatCardModule,
@@ -41,18 +41,15 @@ const muiModules = [
     ...muiModules,
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     BrowserAnimationsModule,
-    StoreModule.forRoot({}, {}),
-    EffectsModule.forRoot([AppEffects]),
+    EffectsModule.forRoot([AppEffects, AuthEffects]),
     ReactiveFormsModule,
     FormsModule,
-    StoreModule.forRoot(reducers, {
-      metaReducers
-    }),
-    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()})
+    StoreModule.forRoot({auth: authReducer}),
+    StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
+    AppRoutingModule
   ],
-  providers: [AuthGuard],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule {

@@ -1,9 +1,10 @@
 import {Component} from '@angular/core';
 import {Router} from "@angular/router";
-import {UserService} from "../../services/user.service";
+import {AuthService} from "../../services/user/auth.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
-import { Store } from '@ngrx/store';
-import {authorize} from "../../reducers/user/userStateActions";
+import {Store} from '@ngrx/store';
+import {loginRequest} from "../../states/auth/auth.actions";
+import {AuthState} from "../../states/auth/types/AuthState";
 
 @Component({
   selector: 'app-login-page',
@@ -17,9 +18,9 @@ export class LoginPageComponent {
 
   constructor(
     private _router: Router,
-    private _userService: UserService,
+    private _userService: AuthService,
     private _formBuilder: FormBuilder,
-    private _store : Store) {
+    private _store: Store<AuthState>) {
 
     this.formGroup = this._formBuilder.group({
       email: new FormControl("", [Validators.required, Validators.email]),
@@ -36,19 +37,18 @@ export class LoginPageComponent {
     return this.formGroup.get("password");
   }
 
-  async signInButtonClicked(e: SubmitEvent): Promise<any> {
+  signInButtonClicked(e: SubmitEvent) {
 
     e.preventDefault();
 
-    this._userService.authenticate(this.formGroup.value).subscribe({
-      next: (response) => {
-        console.log(response);
-        this._store.dispatch(authorize(response));
-        console.log("authorized");
-        this._router.navigate(['profile']);
-      },
-      error: (error) => console.log(error)
-    });
+    this._store.dispatch(loginRequest(this.formGroup.value));
+
+
+    //
+    // this._userService.authenticate(this.formGroup.value).subscribe({
+    //   next: (value) => this._router.navigateByUrl("/profile"),
+    //   error: (err) => console.log(err)
+    // });
 
   }
 }
