@@ -20,6 +20,8 @@ import {StoreDevtoolsModule} from '@ngrx/store-devtools';
 import {AppEffects} from './app.effects';
 import {authReducer} from "./states/auth/auth.reducer";
 import {AuthEffects} from "./states/auth/auth.effects";
+import {SidebarComponent} from './components/sidebar/sidebar.component';
+import {CustomSidebarButtonComponent} from './components/custom-sidebar-button/custom-sidebar-button.component';
 
 const muiModules = [
   MatCardModule,
@@ -35,7 +37,9 @@ const muiModules = [
     AppComponent,
     LoginPageComponent,
     ProfilePageComponent,
-    RouteNotFoundPageComponent
+    RouteNotFoundPageComponent,
+    SidebarComponent,
+    CustomSidebarButtonComponent
   ],
   imports: [
     ...muiModules,

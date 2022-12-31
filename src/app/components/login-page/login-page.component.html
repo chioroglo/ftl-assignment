@@ -21,7 +21,7 @@
 
         <mat-form-field [ngClass]="(getEmail()?.invalid && formGroup.touched) ? 'error-text' : ''" appearance="outline">
           <mat-label>E-mail address</mat-label>
-          <input formControlName="email" matInput>
+          <input formControlName="email" matInput type="text">
           <mat-hint *ngIf="getEmail()?.touched && getEmail()?.hasError('required')">Required</mat-hint>
           <mat-hint *ngIf="getEmail()?.touched && getEmail()?.hasError('email')">Please enter valid e-mail address
           </mat-hint>
@@ -30,7 +30,7 @@
         <mat-form-field [ngClass]="(getPassword()?.invalid && formGroup.touched) ? 'error-text' : ''"
                         appearance="outline">
           <mat-label>Password</mat-label>
-          <input formControlName="password" matInput>
+          <input formControlName="password" matInput type="password">
           <mat-hint *ngIf="getPassword()?.hasError('required') && getPassword()?.touched" class="error-text">Required
           </mat-hint>
         </mat-form-field>
@@ -39,15 +39,15 @@
             Forgot password?
         </span>
 
-        <button [disabled]="formGroup.invalid" class="submit-button" mat-flat-button>
+        <button type="submit" [disabled]="formGroup.invalid" class="submit-button" mat-flat-button>
           Sign in
         </button>
 
-        <button class="sign-up-button" mat-button>
+        <button (click)="$event.preventDefault()" class="sign-up-button" mat-button>
           Don't have an account? Sign Up!
         </button>
-
       </form>
+
     </div>
   </div>
 </div>
