@@ -34,17 +34,17 @@ export class ViewsChartComponent {
           y: {
             beginAtZero: true,
             grid: {
-              display:false
+              display: false
             },
             ticks: {
-              display:false,
+              display: false,
               stepSize: 10,
             }
           },
           x: {
             beginAtZero: true,
             grid: {
-              display:false
+              display: false
             }
           }
 

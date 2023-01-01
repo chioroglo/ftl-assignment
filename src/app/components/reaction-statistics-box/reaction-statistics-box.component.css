@@ -3,7 +3,7 @@
   margin: 10px 0;
   padding: 24px;
   border-radius: 16px;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
@@ -17,7 +17,7 @@
 
 .reaction-info {
   flex-grow: 1;
-  padding:0
+  padding: 0
 }
 
 .reaction-amount {
@@ -40,6 +40,6 @@
 }
 
 .ratio-arrow {
-  width:fit-content;
-  height:fit-content;
+  width: fit-content;
+  height: fit-content;
 }

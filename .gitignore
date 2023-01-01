@@ -106,14 +106,14 @@ _ReSharper.*/
 .cache
 .exe
 
-# user-specific files
+# auth-specific files
 *.rsuser
 *.suo
 *.user
 *.userosscache
 *.sln.docstates
 
-# user-specific files (MonoDevelop/Xamarin Studio)
+# auth-specific files (MonoDevelop/Xamarin Studio)
 *.userprefs
 
 # Mono auto generated files

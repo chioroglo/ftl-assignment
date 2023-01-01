@@ -18,7 +18,7 @@
           together!
         </span>
 
-        <img alt="logo" height="400px" src="../../../assets/media/profile-decoration-image.svg" width="100%"/>
+        <img alt="logo" height="250px" src="../../../assets/media/profile-decoration-image.svg" width="100%"/>
 
         <div class="profile-completeness-block">
           <mat-icon class="star-icon-profile-completeness-block">stars</mat-icon>
@@ -46,6 +46,21 @@
 
         <views-chart></views-chart>
 
+      </div>
+
+      <div class="targets-meetings-block">
+        <div class="targets">
+          <span class="heading-text">Targets</span>
+          <target-progressbar-card [propertyName]="'Views'"></target-progressbar-card>
+
+          <target-progressbar-card [propertyName]="'Followers'"></target-progressbar-card>
+
+          <target-progressbar-card [propertyName]="'Income'"></target-progressbar-card>
+        </div>
+
+        <div class="meetings">
+          <span class="heading-text">Meetings</span>
+        </div>
       </div>
 
     </div>

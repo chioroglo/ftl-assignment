@@ -1,6 +1,6 @@
 import {Component} from '@angular/core';
 import {Router} from "@angular/router";
-import {AuthService} from "../../services/user/auth.service";
+import {AuthService} from "../../services/auth/auth.service";
 import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {Store} from '@ngrx/store';
 import {loginRequest} from "../../states/auth/auth.actions";

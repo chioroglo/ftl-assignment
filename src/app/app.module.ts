@@ -23,10 +23,13 @@ import {AuthEffects} from "./states/auth/auth.effects";
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {CustomSidebarButtonComponent} from './components/custom-sidebar-button/custom-sidebar-button.component';
 import {ReactionStatisticsBoxComponent} from './components/reaction-statistics-box/reaction-statistics-box.component';
-import {AuthService} from "./services/user/auth.service";
+import {AuthService} from "./services/auth/auth.service";
 import {ProfileReactionsService} from "./services/profileReactions/profile-reactions.service";
-import { ViewsChartComponent } from './components/views-chart/views-chart.component';
+import {ViewsChartComponent} from './components/views-chart/views-chart.component';
 import {NgChartsModule} from "ng2-charts";
+import { TargetProgressbarCardComponent } from './components/target-progressbar-card/target-progressbar-card.component';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
+import { MeetingCardComponent } from './components/meeting-card/meeting-card.component';
 
 const muiModules = [
   MatCardModule,
@@ -46,7 +49,9 @@ const muiModules = [
     SidebarComponent,
     CustomSidebarButtonComponent,
     ReactionStatisticsBoxComponent,
-    ViewsChartComponent
+    ViewsChartComponent,
+    TargetProgressbarCardComponent,
+    MeetingCardComponent
   ],
   imports: [
     ...muiModules,
@@ -59,7 +64,8 @@ const muiModules = [
     StoreModule.forRoot({auth: authReducer}),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
     AppRoutingModule,
-    NgChartsModule
+    NgChartsModule,
+    MatProgressBarModule
   ],
   providers: [AuthService, ProfileReactionsService],
   bootstrap: [AppComponent]

@@ -103,10 +103,26 @@ main {
 
 .user-statistics-block {
   padding: 0 20px;
-  width:fit-content;
-  min-width:500px;
+  width: fit-content;
+  min-width: 500px;
 }
 
 .user-reactions-statistics {
 
+}
+
+.targets-meetings-block {
+  min-width: 500px;
+  width:fit-content;
+  padding: 0 0 0 20px;
+}
+
+.heading-text {
+  margin: 0;
+  font-family: Nunito, sans-serif;
+  font-weight: 800;
+  font-size: 1.125rem;
+  line-height: 1.334;
+  letter-spacing: 0;
+  display: block;
 }
