@@ -25,6 +25,8 @@ import {CustomSidebarButtonComponent} from './components/custom-sidebar-button/c
 import {ReactionStatisticsBoxComponent} from './components/reaction-statistics-box/reaction-statistics-box.component';
 import {AuthService} from "./services/user/auth.service";
 import {ProfileReactionsService} from "./services/profileReactions/profile-reactions.service";
+import { ViewsChartComponent } from './components/views-chart/views-chart.component';
+import {NgChartsModule} from "ng2-charts";
 
 const muiModules = [
   MatCardModule,
@@ -43,7 +45,8 @@ const muiModules = [
     RouteNotFoundPageComponent,
     SidebarComponent,
     CustomSidebarButtonComponent,
-    ReactionStatisticsBoxComponent
+    ReactionStatisticsBoxComponent,
+    ViewsChartComponent
   ],
   imports: [
     ...muiModules,
@@ -55,7 +58,8 @@ const muiModules = [
     FormsModule,
     StoreModule.forRoot({auth: authReducer}),
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
-    AppRoutingModule
+    AppRoutingModule,
+    NgChartsModule
   ],
   providers: [AuthService, ProfileReactionsService],
   bootstrap: [AppComponent]

@@ -16,7 +16,6 @@ export class ProfilePageComponent {
   usernamePlaceholderFromStorageEmail$: Observable<string | undefined>;
 
   constructor(private store: Store<AuthState>) {
-    // TODO change it to call of user auth service
     this.usernamePlaceholderFromStorageEmail$ = this.store.select(selectUser).pipe(map(val => breakEmailStringInTwoParts(val?.email || "")));
   }
 

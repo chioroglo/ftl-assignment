@@ -1,0 +1,51 @@
+.views-block {
+  padding: 24px;
+  font-family: Nunito, sans-serif;
+  background-color: #FFFFFF;
+  border-radius: 16px;
+  width:100%;
+  height:fit-content;
+}
+
+.views-block-caption {
+  margin: 0 0 16px;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.views-block-counter {
+  margin: 0;
+  font-weight: 800;
+  font-size: 1.5rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-align: center;
+}
+
+.view-dashboard-button {
+  background-color: rgb(69, 90, 100,0.1);
+  border-radius: 24px;
+  padding:24px;
+  display:flex;
+  align-items: center;
+}
+
+.icon {
+  padding: 9px 0 0 9px;
+  color: #000000;
+  margin: 0 20px 0 0;
+  background-color: #FFFFFF;
+}
+
+.button-caption {
+  margin: 0;
+  font-family: Nunito, sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  line-height: 1.6;
+  letter-spacing: 0;
+  flex-grow: 1
+}
