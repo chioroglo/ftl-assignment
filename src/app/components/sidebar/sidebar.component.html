@@ -20,7 +20,8 @@
   <div style="height:300px;"></div>
 
   <div class="sidebar-site-menu-button-container">
-    <custom-sidebar-button buttonCaption="Projects" buttonType="person"></custom-sidebar-button>
+    <custom-sidebar-button buttonCaption="{{usernamePlaceholderMappedFromEmail$ | async}}"
+                           buttonType="person"></custom-sidebar-button>
 
     <custom-sidebar-button buttonCaption="Help" buttonType="settings"></custom-sidebar-button>
   </div>

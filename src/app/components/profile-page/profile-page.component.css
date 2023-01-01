@@ -1,6 +1,6 @@
 .profile-page-container {
   background-color: rgb(236, 239, 241);
-  display:flex;
+  display: flex;
   justify-content: center;
 }
 
@@ -9,7 +9,104 @@ main {
 }
 
 .logout-button-container {
-  display:flex;
+  display: flex;
   justify-content: flex-end;
   padding: 40px;
 }
+
+.dashboard-container {
+  display: flex;
+  flex-direction: row;
+}
+
+
+.welcome-user-block {
+  width: fit-content;
+  margin: 0;
+  padding: 0 20px;
+}
+
+
+.text-hi-width-bold {
+  margin: 0 0 0.35em;
+  font-family: Nunito, sans-serif;
+  font-weight: 800;
+  font-size: 2rem;
+  line-height: 1.167;
+  letter-spacing: 0;
+}
+
+
+.text-welcome-back-width-normal {
+  margin: 0 0 24px;
+  font-family: Nunito, sans-serif;
+  font-size: 2rem;
+  line-height: 1.167;
+  letter-spacing: 0;
+  font-weight: 300;
+}
+
+.text-about-page-caption {
+  margin: 0 0 16px;
+  font-family: Nunito, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.75;
+  letter-spacing: 0;
+  color: rgb(96, 125, 139);
+}
+
+
+.profile-completeness-block {
+  background-color: rgb(41, 98, 255);
+  color: #FFFFFF;
+  border-radius: 16px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px;
+}
+
+.profile-completeness-block > button {
+  padding: 16px 24px;
+}
+
+.profile-completeness-block > h5 {
+  margin: 0 0 0.35em;
+  font-family: Nunito, sans-serif;
+  font-weight: 800;
+  font-size: 1.125rem;
+  line-height: 1.334;
+  letter-spacing: 0;
+}
+
+.profile-completeness-block > span {
+  margin: 0 0 24px;
+  font-family: Nunito, sans-serif;
+  font-weight: 400;
+  font-size: 0.875rem;
+  line-height: 1.43;
+  letter-spacing: 0;
+}
+
+.profile-completeness-block > button {
+  padding: 16px 24px;
+}
+
+.star-icon-profile-completeness-block {
+  height: 48px !important;
+  width: 48px !important;
+  font-size: 48px !important;
+  color: #F0F0F0;
+}
+
+.user-statistics-block {
+  padding: 0 20px;
+  width:100%;
+}
+
+.user-reactions-statistics {
+
+}
+

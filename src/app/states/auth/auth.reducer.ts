@@ -12,7 +12,7 @@ export const authReducer = createReducer(authStateInitial,
   on(loginRequest, (state) => {
     return {...state, isLoginInProgress: true}
   }),
-  on(logout,(state) => {
-    return {...state,isLoginInProgress: false,isLoggedIn: false,user: null,loginError: undefined} // undefined?? maybe use null instead
+  on(logout, (state) => {
+    return {...state, isLoginInProgress: false, isLoggedIn: false, user: null, loginError: undefined} // undefined?? maybe use null instead
   })
 );

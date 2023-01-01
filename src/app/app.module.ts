@@ -22,13 +22,16 @@ import {authReducer} from "./states/auth/auth.reducer";
 import {AuthEffects} from "./states/auth/auth.effects";
 import {SidebarComponent} from './components/sidebar/sidebar.component';
 import {CustomSidebarButtonComponent} from './components/custom-sidebar-button/custom-sidebar-button.component';
+import {ReactionStatisticsBoxComponent} from './components/reaction-statistics-box/reaction-statistics-box.component';
+import {AuthService} from "./services/user/auth.service";
+import {ProfileReactionsService} from "./services/profileReactions/profile-reactions.service";
 
 const muiModules = [
   MatCardModule,
   MatInputModule,
   MatButtonModule,
   MatIconModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
 ]
 
 
@@ -39,7 +42,8 @@ const muiModules = [
     ProfilePageComponent,
     RouteNotFoundPageComponent,
     SidebarComponent,
-    CustomSidebarButtonComponent
+    CustomSidebarButtonComponent,
+    ReactionStatisticsBoxComponent
   ],
   imports: [
     ...muiModules,
@@ -53,7 +57,7 @@ const muiModules = [
     StoreDevtoolsModule.instrument({maxAge: 25, logOnly: !isDevMode()}),
     AppRoutingModule
   ],
-  providers: [],
+  providers: [AuthService, ProfileReactionsService],
   bootstrap: [AppComponent]
 })
 export class AppModule {

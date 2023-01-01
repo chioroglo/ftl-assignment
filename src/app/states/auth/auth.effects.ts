@@ -33,7 +33,7 @@ export class AuthEffects {
   logout$ = createEffect(() => this._actions$.pipe(
     ofType(logout),
     tap((action) => this._router.navigateByUrl("/login"))
-  ),{dispatch: false})
+  ), {dispatch: false})
 
   // loginFailure$ = createEffect(() =>
   //     this._actions$.pipe(

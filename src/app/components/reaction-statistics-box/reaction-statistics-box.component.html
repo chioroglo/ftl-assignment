@@ -1,0 +1,19 @@
+<mat-card class="statistics-box-card">
+  <mat-icon class="icon" [ngStyle]="{'background-color':iconBackgroundColor}" mat-card-avatar>
+    {{materialIconType}}
+  </mat-icon>
+
+  <div class="reaction-info">
+    <span class="reaction-amount">{{(reaction$ | async)?.amount}}</span>
+    <br/>
+    <span class="reaction-description">{{(reaction$ | async)?.name}}</span>
+  </div>
+
+  <div class="ratio-arrow" [ngSwitch]="(reaction$ | async)?.state">
+    <mat-icon style="color:rgb(0, 230, 118)" *ngSwitchCase="'increase'">arrow_drop_up</mat-icon>
+    <mat-icon style="color:rgb(255, 61, 0)" *ngSwitchCase="'decrease'">arrow_drop_down</mat-icon>
+    <mat-icon style="color:rgb(90,90,90)" *ngSwitchCase="'same'">arrow_left</mat-icon>
+  </div>
+
+
+</mat-card>

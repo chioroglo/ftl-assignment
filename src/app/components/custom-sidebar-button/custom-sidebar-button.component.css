@@ -9,8 +9,11 @@ button {
 }
 
 span {
-  margin: 0 0 0 20px;
-  font-weight: 300;
-  font-size: 18px;
-  color: rgb(69, 90, 100);
+  margin: 0 0 0 10px;
+  font-family: Nunito, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: 0;
+  display: block;
 }
