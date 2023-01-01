@@ -6,7 +6,7 @@ import {AuthState} from "../../states/auth/types/AuthState";
 import {Store} from '@ngrx/store';
 import {selectUser} from "../../states/auth/auth.selector";
 import {map, Observable} from 'rxjs';
-import {UserModel} from 'src/app/models/user';
+import {AuthorizedUserModel} from 'src/app/models/user';
 
 @Component({
   selector: 'reaction-statistics-box',
@@ -24,14 +24,14 @@ export class ReactionStatisticsBoxComponent implements OnInit {
 
 
   reaction$: Observable<ProfileReactionStatisticDto>;
-  user: UserModel;
+  user: AuthorizedUserModel;
 
   constructor(private _reactionsService: ProfileReactionsService, private _authService: AuthService, private _store: Store<AuthState>) {
   }
 
   ngOnInit() {
 
-    this._store.select(selectUser).pipe(map((value: UserModel | null) => {
+    this._store.select(selectUser).pipe(map((value: AuthorizedUserModel | null) => {
       if (value) {
         this.reaction$ = this._reactionsService.getReactionStatisticsForUser(this.reactionName, value.email);
       } else {

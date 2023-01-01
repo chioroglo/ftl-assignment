@@ -1,2 +1,2 @@
 export * from "./LoginDto";
-export * from "./UserModel";
+export * from "./AuthorizedUserModel";

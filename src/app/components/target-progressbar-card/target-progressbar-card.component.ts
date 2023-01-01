@@ -4,7 +4,7 @@ import {ProfileReactionsService} from "../../services/profileReactions/profile-r
 import {Store} from "@ngrx/store";
 import {AuthState} from "../../states/auth/types/AuthState";
 import {selectUser} from "../../states/auth/auth.selector";
-import {UserModel} from "../../models/user";
+import {AuthorizedUserModel} from "../../models/user";
 import {TargetPercentageDto} from "../../services/profileReactions/types";
 
 @Component({

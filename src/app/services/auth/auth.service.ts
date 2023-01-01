@@ -1,5 +1,5 @@
 import {Injectable} from "@angular/core";
-import {LoginDto, UserModel} from "../../models/user";
+import {LoginDto, AuthorizedUserModel} from "../../models/user";
 import {HttpClient} from "@angular/common/http";
 import {environment} from "../../environments/environment";
 import {Observable, of} from "rxjs";
@@ -22,7 +22,7 @@ export class AuthService {
   }
 
 
-  authenticate(credentials: LoginDto): Observable<UserModel> {
+  authenticate(credentials: LoginDto): Observable<AuthorizedUserModel> {
 
     // const request = this._httpClient.get<UserModel>(environment.userApiUrl + "?results=1");
 

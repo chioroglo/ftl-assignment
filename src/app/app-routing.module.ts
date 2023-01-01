@@ -1,7 +1,7 @@
 import {RouterModule, Routes} from "@angular/router";
-import {LoginPageComponent} from "./components/login-page/login-page.component";
-import {ProfilePageComponent} from "./components/profile-page/profile-page.component";
-import {RouteNotFoundPageComponent} from "./components/route-not-found-page/route-not-found-page.component";
+import {LoginPageComponent} from "./pages/login-page/login-page.component";
+import {ProfilePageComponent} from "./pages/profile-page/profile-page.component";
+import {RouteNotFoundPageComponent} from "./pages/route-not-found-page/route-not-found-page.component";
 import {NgModule} from "@angular/core";
 
 const appRoutes: Routes = [

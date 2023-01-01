@@ -2,9 +2,9 @@ import {isDevMode, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
 
 import {AppComponent} from './app.component';
-import {LoginPageComponent} from './components/login-page/login-page.component';
-import {ProfilePageComponent} from './components/profile-page/profile-page.component';
-import {RouteNotFoundPageComponent} from './components/route-not-found-page/route-not-found-page.component';
+import {LoginPageComponent} from './pages/login-page/login-page.component';
+import {ProfilePageComponent} from './pages/profile-page/profile-page.component';
+import {RouteNotFoundPageComponent} from './pages/route-not-found-page/route-not-found-page.component';
 import {AppRoutingModule} from "./app-routing.module";
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
@@ -29,7 +29,7 @@ import {ViewsChartComponent} from './components/views-chart/views-chart.componen
 import {NgChartsModule} from "ng2-charts";
 import { TargetProgressbarCardComponent } from './components/target-progressbar-card/target-progressbar-card.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
-import { MeetingCardComponent } from './components/meeting-card/meeting-card.component';
+import { MeetingClaimCardComponent } from './components/meeting-claim-card/meeting-claim-card.component';
 
 const muiModules = [
   MatCardModule,
@@ -51,7 +51,7 @@ const muiModules = [
     ReactionStatisticsBoxComponent,
     ViewsChartComponent,
     TargetProgressbarCardComponent,
-    MeetingCardComponent
+    MeetingClaimCardComponent
   ],
   imports: [
     ...muiModules,

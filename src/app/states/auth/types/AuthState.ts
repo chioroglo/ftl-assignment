@@ -1,7 +1,7 @@
-import {UserModel} from "src/app/models/user";
+import {AuthorizedUserModel} from "src/app/models/user";
 
 export interface AuthState {
-  user: UserModel | null,
+  user: AuthorizedUserModel | null,
   isLoggedIn: boolean,
   loginError?: string,
   isLoginInProgress: boolean
