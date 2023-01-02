@@ -14,6 +14,6 @@ export class UserService {
   }
 
   getUser(): Observable<UserModel> {
-    return this._http.get<any>(environment.userApiUrl + '/?results=1').pipe(map(val => val.results[0]));
+    return this._http.get<any>(environment.userApiUrl + '?results=1').pipe(map(val => val.results[0]));
   }
 }
