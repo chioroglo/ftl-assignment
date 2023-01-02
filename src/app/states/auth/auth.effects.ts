@@ -34,7 +34,10 @@ export class AuthEffects {
 
   logout$ = createEffect(() => this._actions$.pipe(
     ofType(logout),
-    tap((action) => this._router.navigateByUrl("/login"))
+    tap((action) => {
+      localStorage.removeItem(browserStorageClaimNames.email);
+      this._router.navigateByUrl("/login");
+    })
   ), {dispatch: false})
 
   constructor(private _actions$: Actions, private _authService: AuthService, private _router: Router) {

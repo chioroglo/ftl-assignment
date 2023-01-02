@@ -23,8 +23,6 @@ export class AuthService {
 
 
   authenticate(credentials: LoginDto): Observable<AuthorizedUserModel> {
-
-    const request = of({email: credentials.email});
-    return request;
+    return of({email: credentials.email});
   }
 }
