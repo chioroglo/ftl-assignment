@@ -27,9 +27,9 @@ import {AuthService} from "./services/auth/auth.service";
 import {ProfileReactionsService} from "./services/profileReactions/profile-reactions.service";
 import {ViewsChartComponent} from './components/views-chart/views-chart.component';
 import {NgChartsModule} from "ng2-charts";
-import { TargetProgressbarCardComponent } from './components/target-progressbar-card/target-progressbar-card.component';
+import {TargetProgressbarCardComponent} from './components/target-progressbar-card/target-progressbar-card.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
-import { MeetingClaimCardComponent } from './components/meeting-claim-card/meeting-claim-card.component';
+import {MeetingClaimCardComponent} from './components/meeting-claim-card/meeting-claim-card.component';
 
 const muiModules = [
   MatCardModule,

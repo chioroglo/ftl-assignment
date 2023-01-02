@@ -35,12 +35,6 @@ export class AuthEffects {
     tap((action) => this._router.navigateByUrl("/login"))
   ), {dispatch: false})
 
-  // loginFailure$ = createEffect(() =>
-  //     this._actions$.pipe(
-  //       ofType(loginFailure),
-  //     )
-  //   , {dispatch: false})
-
   constructor(private _actions$: Actions, private _authService: AuthService, private _router: Router) {
   }
 }

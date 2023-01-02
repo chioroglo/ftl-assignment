@@ -1,14 +1,15 @@
 mat-card {
   padding: 24px;
-  width:400px;
+  width: 400px;
   margin: 20px 0;
   border-radius: 24px;
-  display:flex;
+  display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
 .avatar {
-  display:block;
+  display: block;
 }
 
 .full-name {

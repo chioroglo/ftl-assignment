@@ -12,6 +12,7 @@ export class ProfileReactionsService {
   }
 
 
+  // faked api call
   getReactionStatisticsForUser(reactionName: string, username: string): Observable<ProfileReactionStatisticDto> {
 
     let availableStates: AmountOfReactionsRatio[] = ["same", "increase", "decrease"];
@@ -27,7 +28,7 @@ export class ProfileReactionsService {
   getTargetPercentageByPositionName(statisticsPositionName: string): Observable<TargetPercentageDto> {
     return of({
       positionName: statisticsPositionName,
-      percentage: getRandomIntegerInRange(0,100)
+      percentage: getRandomIntegerInRange(0, 100)
     });
   }
 }

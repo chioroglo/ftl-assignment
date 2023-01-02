@@ -43,12 +43,5 @@ export class LoginPageComponent {
 
     this._store.dispatch(loginRequest(this.formGroup.value));
 
-
-    //
-    // this._userService.authenticate(this.formGroup.value).subscribe({
-    //   next: (value) => this._router.navigateByUrl("/profile"),
-    //   error: (err) => console.log(err)
-    // });
-
   }
 }

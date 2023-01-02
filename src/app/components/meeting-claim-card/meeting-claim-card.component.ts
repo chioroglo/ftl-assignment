@@ -8,12 +8,12 @@ import {UserModel} from "../../services/user/types";
   templateUrl: './meeting-claim-card.component.html',
   styleUrls: ['./meeting-claim-card.component.css']
 })
-export class MeetingClaimCardComponent implements OnInit{
+export class MeetingClaimCardComponent implements OnInit {
+
+  user$: Observable<UserModel>
 
   constructor(private _userService: UserService) {
   }
-
-  user$: Observable<UserModel>
 
   ngOnInit() {
     this.user$ = this._userService.getUser();

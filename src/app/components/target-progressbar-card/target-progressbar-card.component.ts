@@ -1,10 +1,8 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {map, Observable, tap} from 'rxjs';
+import {Observable} from 'rxjs';
 import {ProfileReactionsService} from "../../services/profileReactions/profile-reactions.service";
 import {Store} from "@ngrx/store";
 import {AuthState} from "../../states/auth/types/AuthState";
-import {selectUser} from "../../states/auth/auth.selector";
-import {AuthorizedUserModel} from "../../models/user";
 import {TargetPercentageDto} from "../../services/profileReactions/types";
 
 @Component({
@@ -12,16 +10,14 @@ import {TargetPercentageDto} from "../../services/profileReactions/types";
   templateUrl: './target-progressbar-card.component.html',
   styleUrls: ['./target-progressbar-card.component.css']
 })
-export class TargetProgressbarCardComponent implements OnInit{
-
-  constructor(private _reactionService: ProfileReactionsService, private _store: Store<AuthState>) {
-  }
+export class TargetProgressbarCardComponent implements OnInit {
 
   @Input()
   propertyName: string
-
   percentage$: Observable<TargetPercentageDto>;
 
+  constructor(private _reactionService: ProfileReactionsService, private _store: Store<AuthState>) {
+  }
 
   ngOnInit() {
     this.percentage$ = this._reactionService.getTargetPercentageByPositionName(this.propertyName);
