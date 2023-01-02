@@ -4,6 +4,7 @@ import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {catchError, exhaustMap, map, of, tap} from "rxjs";
 import {AuthService} from "../../services/auth/auth.service";
 import {loginFailure, loginRequest, loginSuccess, logout} from "./auth.actions";
+import {browserStorageClaimNames} from "../../utils/browserStorageClaimNames";
 
 @Injectable()
 export class AuthEffects {
@@ -15,7 +16,8 @@ export class AuthEffects {
           return this._authService.authenticate(action)
             .pipe(
               map((successfullResponse) => {
-                  return loginSuccess(successfullResponse)
+                localStorage.setItem(browserStorageClaimNames.email,successfullResponse.email);
+                return loginSuccess(successfullResponse)
                 },
               ),
               catchError((error) => of(loginFailure(error))
