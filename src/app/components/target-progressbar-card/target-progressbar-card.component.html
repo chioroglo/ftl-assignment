@@ -1,8 +1,0 @@
-<mat-card>
-  <div class="caption">
-    <div>{{(percentage$ | async)?.positionName}}</div>
-    <div>{{(percentage$ | async)?.percentage}}%</div>
-  </div>
-  <mat-progress-bar mode="determinate" style="color: blanchedalmond; border-color: black !important;"
-                    value="{{(percentage$ | async)?.percentage}}"></mat-progress-bar>
-</mat-card>
