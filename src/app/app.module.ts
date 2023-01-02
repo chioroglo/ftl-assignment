@@ -1,6 +1,5 @@
 import {isDevMode, NgModule} from '@angular/core';
 import {BrowserModule} from '@angular/platform-browser';
-
 import {AppComponent} from './app.component';
 import {LoginPageComponent} from './pages/login-page/login-page.component';
 import {ProfilePageComponent} from './pages/profile-page/profile-page.component';
@@ -30,6 +29,7 @@ import {NgChartsModule} from "ng2-charts";
 import {TargetProgressbarCardComponent} from './components/target-progressbar-card/target-progressbar-card.component';
 import {MatProgressBarModule} from "@angular/material/progress-bar";
 import {MeetingClaimCardComponent} from './components/meeting-claim-card/meeting-claim-card.component';
+import {AuthGuard} from "./guards/auth.guard";
 
 const muiModules = [
   MatCardModule,
@@ -67,7 +67,7 @@ const muiModules = [
     NgChartsModule,
     MatProgressBarModule
   ],
-  providers: [AuthService, ProfileReactionsService],
+  providers: [AuthService, ProfileReactionsService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule {

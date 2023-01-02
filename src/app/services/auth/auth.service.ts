@@ -5,6 +5,7 @@ import {environment} from "../../environments/environment";
 import {Observable, of} from "rxjs";
 import {select, Store} from "@ngrx/store";
 import {AuthState} from "../../states/auth/types/AuthState";
+import {getSavedUserClaimsFromStorage} from "../../utils/getSavedUserClaimsFromStorage";
 
 @Injectable({
   providedIn: 'root'
@@ -12,15 +13,12 @@ import {AuthState} from "../../states/auth/types/AuthState";
 
 export class AuthService {
 
-  baseUrl: string = environment.userApiUrl;
-
   constructor(private _httpClient: HttpClient, private _store: Store<AuthState>) {
   }
 
-  isAuthorized(): Observable<boolean> {
-    return this._store.pipe(select(state => state.isLoggedIn));
+  isAuthorized(): boolean {
+    return !!getSavedUserClaimsFromStorage();
   }
-
 
   authenticate(credentials: LoginDto): Observable<AuthorizedUserModel> {
     return of({email: credentials.email});

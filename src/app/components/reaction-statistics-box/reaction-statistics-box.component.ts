@@ -34,11 +34,9 @@ export class ReactionStatisticsBoxComponent implements OnInit {
     this._store.select(selectUser).pipe(map((value: AuthorizedUserModel | null) => {
       if (value) {
         this.reaction$ = this._reactionsService.getReactionStatisticsForUser(this.reactionName, value.email);
-      } else {
-        throw new Error("NO USER IN STORE!");
       }
-    })).subscribe();
-
+    }
+  )).subscribe();
   }
 
 }

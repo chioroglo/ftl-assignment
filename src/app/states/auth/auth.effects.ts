@@ -4,7 +4,7 @@ import {Actions, createEffect, ofType} from "@ngrx/effects";
 import {catchError, exhaustMap, map, of, tap} from "rxjs";
 import {AuthService} from "../../services/auth/auth.service";
 import {loginFailure, loginRequest, loginSuccess, logout} from "./auth.actions";
-import {browserStorageClaimNames} from "../../utils/browserStorageClaimNames";
+import {browserStorageClaimNames} from "../../utils";
 
 @Injectable()
 export class AuthEffects {
